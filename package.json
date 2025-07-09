@@ -7,7 +7,17 @@
   "type": "commonjs",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node proxy.js",
+    "admin": "node admin.js",
+    "dev": "concurrently \"npm run start\" \"npm run admin\"",
+      "dev:proxy": "nodemon --watch proxy.js proxy.js",
+  "dev:admin": "nodemon --watch admin.js admin.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0",
+    "nodemon": "^3.1.10"
   }
 }
