@@ -1,11 +1,13 @@
 const net = require("net");
-const PORT = 9000;
+const PORT = 9005;
 
 const backends = [
   { host: "127.0.0.1", port: 8000, healthy: true, connections: 0 },
   { host: "127.0.0.1", port: 8001, healthy: true, connections: 0 },
   { host: "127.0.0.1", port: 8002, healthy: true, connections: 0 },
 ];
+
+module.exports = { backends };
 
 let current = 0;
 //Round robin
